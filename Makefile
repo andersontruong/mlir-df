@@ -4,7 +4,7 @@ build-image:
 
 .PHONY: run-image
 run-image:
-	docker run -it --rm -v $(PWD):/home/polyarch/mlir-df/ mlir-df:v1
+	docker run -u 0 -it --rm -v $(PWD):/home/polyarch/mlir-df/ mlir-df:v1
 
 .PHONY: stop-all-containers
 stop-all-containers:
