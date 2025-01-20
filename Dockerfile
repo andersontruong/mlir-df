@@ -15,15 +15,10 @@ RUN DEBIAN_FRONTEND=noninteractive \
   && rm -rf /var/lib/apt/lists/*
 RUN apt-get install
 
-RUN echo "export PATH=$PATH:/home/polyarch/" >> /etc/bash.bashrc
+RUN echo "export PATH=$PATH:/home/polyarch/mlir-df/" >> /etc/bash.bashrc
 
 RUN useradd -ms /bin/bash polyarch
 USER polyarch
-
-RUN cd /home/polyarch \
-  && wget https://github.com/bazelbuild/bazelisk/releases/download/v1.25.0/bazelisk-linux-amd64 -O bazel \
-  && chmod +x bazel \
-  && ./bazel
 
 WORKDIR /home/polyarch
 ENTRYPOINT ["/bin/bash"]
