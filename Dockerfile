@@ -10,7 +10,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
     python3 \
     ca-certificates \
     build-essential \
-    clang lld \
+    clang lld ccache \
     cmake ninja-build \
   && rm -rf /var/lib/apt/lists/*
 RUN apt-get install
